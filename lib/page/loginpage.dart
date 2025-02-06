@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emanuntung_project/page/home.dart';
 import 'package:emanuntung_project/page/regispage.dart';
+import 'package:emanuntung_project/page/bottomnavbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   icon: Icon(Icons.close, size: 30),
                   onPressed: () {
                     Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => MainScreen()),
                       (Route<dynamic> route) => false,
                     );
                   },

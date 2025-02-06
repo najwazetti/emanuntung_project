@@ -1,10 +1,8 @@
-import 'package:emanuntung_project/page/search.dart';
 import 'home.dart';
 import 'profile.dart';
 import 'riwayatpage.dart';
 import 'notifikasipage.dart';
 import 'package:flutter/material.dart';
-import 'loginpage.dart'; // Hapus jika tidak diperlukan di sini
 
 class MainScreen extends StatefulWidget {
   @override
@@ -19,7 +17,6 @@ class _MainScreenState extends State<MainScreen> {
     Riwayat(),
     NotifikasiPage(),
     ProfilePage(),
-    SearchPage()
   ];
 
   void _onItemTapped(int index) {
