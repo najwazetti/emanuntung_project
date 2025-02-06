@@ -21,20 +21,25 @@ class LainnyaPage extends StatelessWidget {
             // Tab Unggulan
             ListView(
               children: [
+                _buildCategorySection(context, "Informasi Publik", [
+                  _buildServiceItem('assets/portalpegawai.gif', 'Portal Pegawai', () {}),
+                  _buildServiceItem('assets/aplikasi.gif', 'Aplikasi E-Gov', () {}),
+                ]),
                 _buildCategorySection(context, "Laporan dan Kedaruratan", [
-                  _buildServiceItem('assets/city1.jpeg', 'Laporan Warga', () {}),
-                  _buildServiceItem('assets/city2.jpeg', 'Kontak Darurat', () {}),
-                  _buildServiceItem('assets/city3.jpeg', 'Ambulans', () {}),
+                  _buildServiceItem('assets/laporankejadian.gif', 'Laporan Kejadian', () {}),
+                   _buildServiceItem('assets/nomordarurat.gif', 'Nomor Darurat', () {}),
                 ]),
-                _buildCategorySection(context, "Kesehatan", [
-                  _buildServiceItem('assets/city4.jpeg', 'Antrean Faskes', () {}),
+                _buildCategorySection(context, "Kependudukan", [
+                  _buildServiceItem('assets/datakependudukan.gif', 'Data Kependudukan', () {}),
+                  _buildServiceItem('assets/administrasi.gif', 'Administrasi Kependudukan', () {}),
                 ]),
-                _buildCategorySection(context, "Sosial dan Ekonomi", [
-                  _buildServiceItem('assets/city1.jpeg', 'Pajak', () {}),
-                  _buildServiceItem('assets/city2.jpeg', 'Harga Pangan', () {}),
+                _buildCategorySection(context, "Manajemen Pemerintahan", [
+                  _buildServiceItem('assets/pelayananpajak.gif', 'Pelayanan Pajak', () {}),
+                   _buildServiceItem('assets/informasianggaran.gif', 'Informasi Anggaran', () {}),
                 ]),
-                _buildCategorySection(context, "Transportasi", [
-                  _buildServiceItem('assets/city3.jpeg', 'Transportasi Publik', () {}),
+                _buildCategorySection(context, "Kemitraan", [
+                  _buildServiceItem('assets/kerjasamabisnis.gif', 'Kerjasama Bisnis', () {}),
+                   _buildServiceItem('assets/kerjasamabisnis.gif', 'Program CSR', () {}),
                 ]),
               ],
             ),
@@ -90,7 +95,7 @@ class LainnyaPage extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 8.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
-          color: Colors.grey[200],
+          color: const Color.fromARGB(255, 234, 243, 243),
         ),
         child: Row(
           children: [
