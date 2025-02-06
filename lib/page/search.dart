@@ -7,28 +7,29 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
-  final Map<String, List<Map<String, dynamic>>> categorizedServices = {
+    final Map<String, List<Map<String, dynamic>>> categorizedServices = {
     'Informasi Publik': [
-      {'image': 'assets/health.jpeg', 'label': 'Ambulans'},
-      {'image': 'assets/health.jpeg', 'label': 'Kesehatan Umum'},
+      {'image': 'assets/portalpegawai.gif', 'label': 'Portal Pegawai'},
+      {'image': 'assets/aplikasi.gif', 'label': 'Aplikasi E-Gov'},
     ],
-    'Laporan dan Kedaduratan': [
-      {'image': 'assets/transport.jpeg', 'label': 'Transportasi Publik'},
-      {'image': 'assets/transport.jpeg', 'label': 'Layanan Bus'},
+    'Laporan dan Kedaruratan': [
+      {'image': 'assets/laporankejadian.gif', 'label': 'Laporan Kejadian'},
+      {'image': 'assets/nomordarurat.gif', 'label': 'Nomor Darurat'},
     ],
     'Kependudukan': [
-      {'image': 'assets/environment.jpeg', 'label': 'Kualitas Udara'},
-      {'image': 'assets/environment.jpeg', 'label': 'Kebersihan Kota'},
+      {'image': 'assets/datakependudukan.gif', 'label': 'Data Kependudukan'},
+      {'image': 'assets/administrasi.gif', 'label': 'Administrasi Kependudukan'},
     ],
     'Manajemen Pemerintahan': [
-      {'image': 'assets/economy.jpeg', 'label': 'Pajak'},
-      {'image': 'assets/economy.jpeg', 'label': 'Harga Pangan'},
+      {'image': 'assets/pelayananpajak.gif', 'label': 'Pelayanan Pajak'},
+      {'image': 'assets/informasianggaran.gif', 'label': 'Informasi Anggaran'},
     ],
     'Kemitraan': [
-      {'image': 'assets/economy.jpeg', 'label': 'Pajak'},
-      {'image': 'assets/economy.jpeg', 'label': 'Harga Pangan'},
+      {'image': 'assets/kerjasamabisnis.gif', 'label': 'Kerjasama Bisnis'},
+      {'image': 'assets/kerjasamabisnis.gif', 'label': 'Program CSR'},
     ],
   };
+
 
   String searchText = "";
 

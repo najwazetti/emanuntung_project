@@ -90,6 +90,15 @@ flutter:
     - assets/berita4.png
     - assets/document.gif
     - assets/userprofile.png
+    - assets/portalpegawai.gif
+    - assets/aplikasi.gif
+    - assets/laporankejadian.gif
+    - assets/nomordarurat.gif
+    - assets/datakependudukan.gif
+    - assets/administrasi.gif
+    - assets/pelayananpajak.gif
+    - assets/informasianggaran.gif
+    - assets/kerjasamabisnis.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
