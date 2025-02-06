@@ -7,7 +7,10 @@ class LainnyaPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Layanan Lainnya"),
+          title: const Text(
+              'Layanan Lainnya',
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
           centerTitle: true,
           bottom: const TabBar(
             tabs: [
