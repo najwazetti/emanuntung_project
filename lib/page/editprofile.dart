@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: EditProfilePage(),
-  ));
-}
+import 'package:emanuntung_project/page/profile.dart'; // Make sure to import profile.dart
 
 class EditProfilePage extends StatelessWidget {
-  final TextEditingController firstNameController = TextEditingController(text: 'Carlos');
-  final TextEditingController lastNameController = TextEditingController(text: 'Sainz');
-  final TextEditingController emailController = TextEditingController(text: 'carlossainz@formula1.com');
-  final TextEditingController phoneController = TextEditingController(text: '081234567890');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +11,12 @@ class EditProfilePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.check),
             onPressed: () {
-              // Simpan perubahan
-              print('Nama Depan: ${firstNameController.text}');
-              print('Nama Belakang: ${lastNameController.text}');
-              print('Email: ${emailController.text}');
-              print('Nomor Telepon: ${phoneController.text}');
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfilePage(),
+                ),
+              );
             },
           ),
         ],
@@ -41,7 +31,7 @@ class EditProfilePage extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('assets/profile_picture.jpg'), // Ganti dengan gambar sesuai kebutuhan
+                    backgroundImage: AssetImage('assets/userprofile.png'),
                   ),
                   Positioned(
                     bottom: 0,
@@ -49,7 +39,6 @@ class EditProfilePage extends StatelessWidget {
                     child: IconButton(
                       icon: Icon(Icons.camera_alt, color: Colors.white),
                       onPressed: () {
-                        // Aksi untuk mengubah foto
                       },
                     ),
                   ),
@@ -58,25 +47,26 @@ class EditProfilePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text('NIK', style: TextStyle(fontSize: 14)),
-            Text('1234567890123456', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            Text('1234567890123456', 
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             SizedBox(height: 20),
-            _buildTextField(label: 'Nama Depan', controller: firstNameController),
-            _buildTextField(label: 'Nama Belakang', controller: lastNameController),
-            _buildTextField(label: 'Email', controller: emailController),
-            _buildTextField(label: 'Nomor Telepon', controller: phoneController),
+            _buildTextField(label: 'Nama Depan', initialValue: 'Carlos'),
+            _buildTextField(label: 'Nama Belakang', initialValue: 'Sainz'),
+            _buildTextField(label: 'Email', initialValue: 'carlossainz@formula1.com'),
+            _buildTextField(label: 'Nomor Telepon', initialValue: '081234567890'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTextField({required String label, required TextEditingController controller}) {
+  Widget _buildTextField({required String label, required String initialValue}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label, style: TextStyle(fontSize: 14)),
-        TextField(
-          controller: controller,
+        TextFormField(
+          initialValue: initialValue,
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           ),
