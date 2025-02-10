@@ -65,7 +65,7 @@ class ProfilePage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.help),
-              title: Text('Help & Support'),
+              title: Text('Bantuan'),
               onTap: () {},
             ),
             ListTile(

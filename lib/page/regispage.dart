@@ -28,7 +28,7 @@ class Regispage extends StatelessWidget {
             SizedBox(height: 20),
             Center(
               child: Image.asset(
-                'assets/document.gif', // Ganti dengan gambar sesuai kebutuhan
+                'assets/document.gif',
                 height: 150,
               ),
             ),
@@ -62,7 +62,6 @@ class Regispage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Simulasi registrasi berhasil
                 _showSuccessDialog(context);
               },
               style: ElevatedButton.styleFrom(
@@ -141,11 +140,11 @@ class Regispage extends StatelessWidget {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)), // Membuat sudut membulat
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)), 
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.check_circle, color: Colors.green, size: 60), // Ikon centang hijau
+            Icon(Icons.check_circle, color: Colors.green, size: 60),
             SizedBox(height: 10),
             Text(
               'Login berhasil',
@@ -160,13 +159,13 @@ class Regispage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Warna tombol sesuai gambar
+                backgroundColor: Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
               onPressed: () {
-                  Navigator.of(context).pop(); // Tutup dialog
+                  Navigator.of(context).pop();
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

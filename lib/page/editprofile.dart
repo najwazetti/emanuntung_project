@@ -1,3 +1,4 @@
+import 'package:emanuntung_project/page/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:emanuntung_project/page/bottomnavbar.dart';
 
@@ -11,11 +12,9 @@ class EditProfilePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.check),
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MainScreen(),
-                ),
+              Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                      (Route<dynamic> route) => false,
               );
             },
           ),
