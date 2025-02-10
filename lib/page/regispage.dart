@@ -32,12 +32,12 @@ class Regispage extends StatelessWidget {
                 height: 150,
               ),
             ),
-            SizedBox(height: 5),
-            Text(
+            const SizedBox(height: 5),
+            const Text(
               'eManuntung',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue),
             ),
-            Text(
+            const Text(
               'Registrasi Akun Single Sign On',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
@@ -125,7 +125,7 @@ class Regispage extends StatelessWidget {
             ),
           ),
         ),
-        Text(
+        const Text(
           'Kata Sandi harus mengandung huruf besar, kecil, angka dan simbol minimal 8 Karakter.',
           style: TextStyle(fontSize: 12),
         ),
