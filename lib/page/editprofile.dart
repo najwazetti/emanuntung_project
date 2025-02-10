@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:emanuntung_project/page/profile.dart'; // Make sure to import profile.dart
+import 'package:emanuntung_project/page/bottomnavbar.dart';
 
 class EditProfilePage extends StatelessWidget {
   @override
@@ -14,7 +14,7 @@ class EditProfilePage extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
+                  builder: (context) => MainScreen(),
                 ),
               );
             },
