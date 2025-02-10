@@ -61,7 +61,10 @@ class Regispage extends StatelessWidget {
             _buildPasswordField(),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                // Simulasi registrasi berhasil
+                _showSuccessDialog(context);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 minimumSize: Size(double.infinity, 50),
@@ -132,4 +135,51 @@ class Regispage extends StatelessWidget {
       ],
     );
   }
+
+  void _showSuccessDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)), // Membuat sudut membulat
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.check_circle, color: Colors.green, size: 60), // Ikon centang hijau
+            SizedBox(height: 10),
+            Text(
+              'Login berhasil',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 5),
+            Text(
+              'Selamat anda berhasil login',
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Warna tombol sesuai gambar
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+              onPressed: () {
+                  Navigator.of(context).pop(); // Tutup dialog
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+              },
+              child: Text('Selanjutnya', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
 }
