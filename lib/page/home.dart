@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   Positioned(
-                    bottom: -25,
+                    bottom: 5,
                     left: 16,
                     right: 16,
                     child: Container(
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(top: 30, left: 16, right: 16),
+            padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,

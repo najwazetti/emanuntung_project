@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Image.asset('assets/home.gif', width: 24, height: 24),
-            label: 'Home',
+            label: 'Home', 
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/riwayat.gif', width: 24, height: 24),
