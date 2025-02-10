@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:emanuntung_project/page/editprofile.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -48,7 +49,14 @@ class ProfilePage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.security_update_sharp),
               title: Text('Edit Profile'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => EditProfilePage(),
+                            ),
+                          );
+              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
