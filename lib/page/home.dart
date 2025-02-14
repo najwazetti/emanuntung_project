@@ -1,9 +1,12 @@
 import 'dart:async';
+import '../widget/berita.dart';
+import '../widget/layananKhusus.dart';
 import 'package:flutter/material.dart';
 import 'package:emanuntung_project/page/search.dart';
 import 'package:emanuntung_project/page/lainnya.dart';
 import 'package:emanuntung_project/page/imagepath.dart';
 import 'package:emanuntung_project/page/loginpage.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -39,25 +42,36 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> cards = [
     {
       'image': 'assets/berita1.png',
-      'title': 'Balikpapan Kembangkan 11 Sekolah Rujukan Google, Siapkan Generasi Digital',
+      'title':
+          'Balikpapan Kembangkan 11 Sekolah Rujukan Google, Siapkan Generasi Digital',
       'subtitle': '18 Januari 2025',
       'category': 'News'
     },
     {
       'image': 'assets/berita2.png',
-      'title': 'Pengembangan Griya Rudiana Asri Laporkan 8 Orang ke Polda Kaltim',
+      'title':
+          'Pengembangan Griya Rudiana Asri Laporkan 8 Orang ke Polda Kaltim',
       'subtitle': '18 Januari 2025',
       'category': 'News'
     },
     {
       'image': 'assets/berita3.png',
-      'title': 'Wali Kota Balikapapan Dukung Proyek Tol Bandara SAMS Sepinggan-IKN',
+      'title':
+          'Wali Kota Balikapapan Dukung Proyek Tol Bandara SAMS Sepinggan-IKN',
       'subtitle': '18 Januari 2025',
       'category': 'News'
     },
     {
       'image': 'assets/berita4.png',
-      'title': '2 Tahun Jadi DPO Korupsi, Mantan Kades di Mojokerto Jadi Sopir di Balikpapan, Rugikan Negara Rp 120 Juta',
+      'title':
+          '2 Tahun Jadi DPO Korupsi, Mantan Kades di Mojokerto Jadi Sopir di Balikpapan, Rugikan Negara Rp 120 Juta',
+      'subtitle': '18 Januari 2025',
+      'category': 'News'
+    },
+    {
+      'image': 'assets/berita4.png',
+      'title':
+          '2 Tahun Jadi DPO Korupsi, Mantan Kades di Mojokerto Jadi Sopir di Balikpapan, Rugikan Negara Rp 120 Juta',
       'subtitle': '18 Januari 2025',
       'category': 'News'
     }
@@ -96,7 +110,6 @@ class _HomePageState extends State<HomePage> {
     _pageController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +182,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: Row(
                               children: [
-                                Icon(Icons.search, color: Colors.grey[600], size: 24),
+                                Icon(Icons.search,
+                                    color: Colors.grey[600], size: 24),
                                 const SizedBox(width: 12),
                                 Text(
                                   'Cari Layanan di eManuntung?',
@@ -199,14 +213,16 @@ class _HomePageState extends State<HomePage> {
                 childAspectRatio: 1,
               ),
               delegate: SliverChildListDelegate([
-                _buildServiceItem('assets/kependudukan.gif', 'Kependudukan', () {
+                _buildServiceItem('assets/kependudukan.gif', 'Kependudukan',
+                    () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 }),
                 _buildServiceItem('assets/kelurahan.gif', 'Kelurahan', () {}),
-                _buildServiceItem('assets/tenagakerja.gif', 'Tenaga Kerja', () {}),
+                _buildServiceItem(
+                    'assets/tenagakerja.gif', 'Tenaga Kerja', () {}),
                 _buildServiceItem('assets/pajak.gif', 'Pajak', () {}),
                 _buildServiceItem('assets/jdih.gif', 'JDIH', () {}),
                 _buildServiceItem('assets/helpdesk.gif', 'Helpdesk', () {}),
@@ -223,170 +239,84 @@ class _HomePageState extends State<HomePage> {
           SliverPadding(
             padding: const EdgeInsets.all(16),
             sliver: SliverToBoxAdapter(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ImagePathPage()),
+              child: Text(
+                'Layanan Khusus',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 200, // Tinggi dari slider horizontal
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3, // Jumlah item dalam slider
+                itemBuilder: (context, index) {
+                  return GestureDetectorWidget(
+                    foto: 'assets/balikpapan3.jpg',
+                    route: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImagePathPage(),
+                        ),
+                      );
+                    },
                   );
                 },
-                child: Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Stack(
-                      children: [
-                        Image.asset(
-                          'assets/balikpapan3.jpg',
-                          width: double.infinity,
-                          height: double.infinity,
-                          fit: BoxFit.cover,
-                        ),
-                        Positioned(
-                          top: 16,
-                          left: 16,
-                          child: Text(
-                            'Layanan Khusus',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              shadows: [
-                                Shadow(
-                                  color: Colors.black.withOpacity(0.7),
-                                  offset: const Offset(2, 2),
-                                  blurRadius: 4,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 16,
-                          right: 16,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
-                                  blurRadius: 4,
-                                  offset: const Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            child: Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(30),
-                                onTap: () {},
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8),
-                                  child: Icon(
-                                    Icons.arrow_forward,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(
+              left: 16,
+              top: 16,
+              bottom: 10,
+            ),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                'Berita',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.all(16),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 5,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      children: [
-                        ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            bottomLeft: Radius.circular(16),
-                          ),
-                          child: Image.asset(
-                            cards[index]['image']!,
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  cards[index]['category']!,
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  cards[index]['title']!,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  cards[index]['subtitle']!,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.black87,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+              bottom: 16,
+            ),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                width: MediaQuery.sizeOf(context).width,
+                height: 500,
+                child: Expanded(
+                  child: ListView.builder(
+                    itemCount: cards.length,
+                    itemBuilder: (context, index) {
+                      return berita(
+                        image: cards[index]['image']!,
+                        category: cards[index]['category']!,
+                        title: cards[index]['title']!,
+                        subtitle: cards[index]['subtitle']!,
+                      );
+                    },
                   ),
                 ),
-                childCount: cards.length,
               ),
             ),
           ),
         ],
       ),
-  );
-}
-    
+    );
+  }
+
   Widget _buildServiceItem(String imagePath, String label, VoidCallback onTap) {
     return Material(
       color: Colors.transparent,
