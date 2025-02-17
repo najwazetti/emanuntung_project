@@ -15,7 +15,7 @@ class GestureDetectorWidget extends StatelessWidget {
     return GestureDetector(
       onTap: route,
       child: Container(
-        width: 300, // Lebar dari setiap item
+        width: 300,
         margin: EdgeInsets.all(8),
         height: 200,
         decoration: BoxDecoration(
@@ -37,37 +37,6 @@ class GestureDetectorWidget extends StatelessWidget {
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
-              ),
-              Positioned(
-                bottom: 16,
-                right: 16,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(30),
-                      onTap: route,
-                      child: const Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ],
           ),

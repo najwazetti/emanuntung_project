@@ -1,5 +1,5 @@
-import 'package:emanuntung_project/page/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:emanuntung_project/page/profile.dart';
 import 'package:emanuntung_project/page/bottomnavbar.dart';
 
 class EditProfilePage extends StatelessWidget {
